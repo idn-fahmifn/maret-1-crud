@@ -13,8 +13,8 @@
                     <span class="text-sm">Form menambahkan kategori produk</span>
                 </div>
 
-                <div class="py-6 px-6">
-                    <form action="" method="post">
+                <div class="mb-6 px-6">
+                    <form action="{{route('kategori.store')}}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="mt-4">
                             <label class="block w-full text-gray-800 dark:text-gray-200">Nama Kategori</label>
@@ -25,7 +25,7 @@
                             <input type="file" name="thumbnail" required class="block w-full bg-white dark:bg-transparent text-gray-800 mt-1 dark:text-gray-200 rounded-md">
                         </div>
                         <div class="mt-4">
-                            <button type="submit" class="bg-red-500 text-white px-6 py-2">Tambah</button>
+                            <button type="submit" class="bg-red-500 hover:bg-red-300 text-white rounded-md px-6 py-2">Tambah</button>
                         </div>
                     </form>
                 </div>

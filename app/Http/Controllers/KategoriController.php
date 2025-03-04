@@ -15,4 +15,10 @@ class KategoriController extends Controller
     {
         return view('kategori.create');
     }
+
+    public function store(Request $request)
+    {
+        $data = $request->all();
+        return $data;
+    }
 }
