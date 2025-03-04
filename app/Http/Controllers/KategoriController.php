@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Kategori;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -9,7 +10,8 @@ class KategoriController extends Controller
 {
     public function index()
     {
-        return view('kategori.index');
+        $data = Kategori::paginate(10);
+        return view('kategori.index', compact('data'));
     }
 
     public function create()
@@ -30,7 +32,8 @@ class KategoriController extends Controller
             $data['thumbnail'] = $name; //nilai yang disimpan ke dalam database.
         }
 
-        return $data;
+        Kategori::create($data); //mengirimkan data ke database
+        return redirect()->route('kategori.index')->with('success', 'Kategori berhasil ditambahkan.'); //respon redirect ke index kategori
 
     }
 }

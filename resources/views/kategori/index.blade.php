@@ -26,8 +26,14 @@
                             <th class="py-1 px-4 uppercase text-sm">Thumbnail</th>
                         </thead>
                         <tbody>
-                            <td class="py-1 px-4 dark:text-gray-200">Snacks</td>
-                            <td class="py-1 px-4 dark:text-gray-200">null</td>
+                            @foreach ($data as $item)
+                                <tr>
+                                    <td class="py-1 px-4 dark:text-gray-200">{{$item->nama_kategori}}</td>
+                                    <td class="py-1 px-4 dark:text-gray-200">
+                                        <img src="{{asset('storage/images/kategori/' . $item->thumbnail)}}" width="100" alt="">
+                                    </td>
+                                </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
@@ -36,4 +42,3 @@
         </div>
     </div>
 </x-app-layout>
-
