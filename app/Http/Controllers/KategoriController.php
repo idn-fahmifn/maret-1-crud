@@ -10,4 +10,9 @@ class KategoriController extends Controller
     {
         return view('kategori.index');
     }
+
+    public function create()
+    {
+        return view('kategori.create');
+    }
 }
