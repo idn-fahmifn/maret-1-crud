@@ -34,6 +34,12 @@ class KategoriController extends Controller
 
         Kategori::create($data); //mengirimkan data ke database
         return redirect()->route('kategori.index')->with('success', 'Kategori berhasil ditambahkan.'); //respon redirect ke index kategori
-
     }
+
+    public function detail($id)
+    {
+        $data = Kategori::findOrFail($id);
+        return view('kategori.detail', compact('data'));
+    }
+
 }

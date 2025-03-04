@@ -15,7 +15,7 @@
 
                 {{-- button create --}}
                 <div class="mt-4 px-6">
-                    <a href="" class="text-md font-semibold text-red-500 hover:text-red-300">Tambah Kategori</a>
+                    <a href="{{route('kategori.create')}}" class="text-md font-semibold text-red-500 hover:text-red-300">Tambah Kategori</a>
                 </div>
 
                 {{-- Table Kategori --}}
