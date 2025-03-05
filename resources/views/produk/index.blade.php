@@ -29,24 +29,14 @@
                         <tbody>
                             @foreach ($data as $item)
                                 <tr>
-                                    <td class="py-1 px-4 dark:text-gray-200">{{$item->nama_kategori}}</td>
-                                    <td class="py-1 px-4 dark:text-gray-200">
-                                        <img src="{{asset('storage/images/kategori/' . $item->thumbnail)}}" width="100" alt="">
-                                    </td>
-                                    <td>
-                                        <form action="{{route('kategori.delete', $item->id)}}" method="post">
-                                            @csrf
-                                            @method('delete')
-                                            <a href="{{route('kategori.detail', $item->id)}}" class="text-md font-semibold text-red-500">Detail</a>
-                                            <button type="submit" class="text-md font-semibold text-red-500 ml-4" onclick="return confirm('yakin mau dihapus?')">Hapus</button>
-                                        </form>
-                                    </td>
+                                    <td class="py-1 px-4 dark:text-gray-200"> <a href="" class="font-semibold text-red-600">{{$item->nama_produk}}</a></td>
+                                    <td class="py-1 px-4 dark:text-gray-200">IDR.{{number_format($item->harga)}}</td>
+                                    <td class="py-1 px-4 dark:text-gray-200">{{$item->kategori->nama_kategori}}</td>
                                 </tr>
                             @endforeach
                         </tbody>
                     </table>
                 </div>
-
             </div>
         </div>
     </div>
