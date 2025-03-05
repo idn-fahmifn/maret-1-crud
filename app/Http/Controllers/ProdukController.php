@@ -60,4 +60,11 @@ class ProdukController extends Controller
         $data->update($input);
         return back()->with('success', 'Data berhasil diubah.');
     }
+
+    public function delete($id)
+    {
+        $data = Produk::findOrFail($id);
+        $data->delete();
+        return redirect()->route('produk.index')->with('success','Data berhasil dihapus');
+    }
 }

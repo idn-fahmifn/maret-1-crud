@@ -30,6 +30,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::post('produk', [ProdukController::class,'store'])->name('produk.store');
     Route::get('produk/{param}', [ProdukController::class, 'detail'])->name('produk.detail');
     Route::put('produk/{param}', [ProdukController::class, 'update'])->name('produk.update');
+    Route::delete('produk/{param}', [ProdukController::class, 'delete'])->name('produk.delete');
+
 });
 
 
