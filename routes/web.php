@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -23,6 +24,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('kategori/{param}', [KategoriController::class, 'detail'])->name('kategori.detail');
     Route::put('kategori/{param}', [KategoriController::class, 'update'])->name('kategori.update');
     Route::delete('kategori/{param}', [KategoriController::class, 'delete'])->name('kategori.delete');
+
+    // Route produk
+    Route::get('produk', [ProdukController::class, 'index'])->name('produk.index');
+    
 
 
 });
