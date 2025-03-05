@@ -46,8 +46,9 @@
                     </h3>
                 </div>
                 <div class="mb-6 px-6">
-                    <form action="" method="post" enctype="multipart/form-data">
+                    <form action="{{route('produk.update', $data->id)}}" method="post" enctype="multipart/form-data">
                         @csrf
+                        @method('put')
                         <div class="mt-4">
                             <label class="block w-full text-gray-800 dark:text-gray-200">Nama Produk</label>
                             <input type="text" name="nama_produk" required value="{{$data->nama_produk}}"
