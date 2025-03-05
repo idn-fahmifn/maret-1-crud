@@ -14,7 +14,7 @@
                 </div>
 
                 <div class="mb-6 px-6">
-                    <form action="" method="post" enctype="multipart/form-data">
+                    <form action="{{route('produk.store')}}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="mt-4">
                             <label class="block w-full text-gray-800 dark:text-gray-200">Nama Produk</label>

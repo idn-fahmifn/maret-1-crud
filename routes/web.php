@@ -27,6 +27,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     // Route produk
     Route::get('produk', [ProdukController::class, 'index'])->name('produk.index');
+    Route::get('produk/create', [ProdukController::class, 'create'])->name('produk.create');
+    Route::post('produk', [ProdukController::class,'store'])->name('produk.store');
+
     
 
 
