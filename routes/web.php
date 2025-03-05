@@ -11,7 +11,6 @@ Route::get('/', function () {
 
 
 Route::middleware(['auth', 'verified'])->group(function () {
-
     // Group authentication and verified
     Route::get('/dashboard', function () {
         return view('dashboard');
@@ -30,12 +29,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('produk/create', [ProdukController::class, 'create'])->name('produk.create');
     Route::post('produk', [ProdukController::class,'store'])->name('produk.store');
     Route::get('produk/{param}', [ProdukController::class, 'detail'])->name('produk.detail');
-
-
-    
-
-
+    Route::put('produk/{param}', [ProdukController::class, 'update'])->name('produk.update');
 });
+
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
