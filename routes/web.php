@@ -21,11 +21,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('kategori/create', [KategoriController::class, 'create'])->name('kategori.create');
     Route::post('kategori', [KategoriController::class,'store'])->name('kategori.store');
     Route::get('kategori/{param}', [KategoriController::class, 'detail'])->name('kategori.detail');
+    Route::put('kategori/{param}', [KategoriController::class, 'update'])->name('kategori.update');
 
 
 });
-
-
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

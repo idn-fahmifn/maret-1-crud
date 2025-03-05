@@ -28,8 +28,9 @@
                     <h3 class="text-md font-semibold text-gray-900 dark:text-gray-200">Edit Kategori {{$data->nama_kategori}}</h3>
                 </div>
                 <div class="mb-6 px-6">
-                    <form action="" method="post" enctype="multipart/form-data">
+                    <form action="{{route('kategori.update',$data->id)}}" method="post" enctype="multipart/form-data">
                         @csrf
+                        @method('put')
                         <div class="mt-4">
                             <label class="block w-full text-gray-800 dark:text-gray-200">Nama Kategori</label>
                             <input type="text" name="nama_kategori" value="{{$data->nama_kategori}}" required class="block w-full bg-white dark:bg-transparent text-gray-800 mt-1 dark:text-gray-200 rounded-md">
