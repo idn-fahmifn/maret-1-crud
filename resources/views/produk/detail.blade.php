@@ -83,7 +83,7 @@
                         </div>
                         <div class="mt-4">
                             <button type="submit"
-                                class="bg-red-500 hover:bg-red-300 text-white rounded-md px-6 py-2">Tambah</button>
+                                class="bg-red-500 hover:bg-red-300 text-white rounded-md px-6 py-2">Ubah</button>
                         </div>
                     </form>
                 </div>
