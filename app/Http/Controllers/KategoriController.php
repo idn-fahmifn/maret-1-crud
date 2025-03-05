@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Kategori;
+use App\Models\Produk;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -40,7 +41,8 @@ class KategoriController extends Controller
     public function detail($id)
     {
         $data = Kategori::findOrFail($id);
-        return view('kategori.detail', compact('data'));
+        $produk = Produk::where('id_kategori', $id)->get()->all();
+        return view('kategori.detail', compact('data', 'produk'));
     }
 
     public function update(Request $request, $id)

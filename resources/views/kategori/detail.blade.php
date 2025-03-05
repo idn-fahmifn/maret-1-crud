@@ -13,6 +13,9 @@
                     <span class="text-sm">Detail kategori {{$data->nama_kategori}}</span>
                 </div>
                 <div class="overflow-x-auto mb-6 px-6">
+
+
+
                     <table class="min-w-full bg-white dark:bg-gray-800">
                         <tbody>
                             <tr>
@@ -28,26 +31,34 @@
 
                 {{-- list data produk --}}
                 <div class="p-6 text-gray-900 dark:text-gray-100">
-                    <h3 class="text-md font-semibold text-gray-900 dark:text-gray-200">Produk yang ada pada kategori {{$data->nama_kategori}}</h3>
+                    <h3 class="text-md font-semibold text-gray-900 dark:text-gray-200">Produk yang ada pada kategori
+                        {{$data->nama_kategori}}</h3>
                 </div>
 
                 <div class="overflow-x-auto mb-6 px-6">
-                    <table class="min-w-full bg-white dark:bg-gray-800">
-                        <thead>
-                            <th class="py-2 px-2 text-start uppercase font-semibold dark:text-gray-200">Nama Produk</th>
-                            <th class="py-2 px-2 text-start uppercase font-semibold dark:text-gray-200">Harga</th>
-                        </thead>
-                        <tbody>
-                            @foreach ($data->produk as $item)
-                                <tr>
-                                    <td class="py-2 px-2 font-md dark:text-gray-200">{{$item->nama_produk}}</td>
-                                    <td class="py-2 px-2 font-md dark:text-gray-200">IDR. {{number_format($item->harga)}} </td>
-                                </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
-                </div>
 
+                    @if (!$produk)
+                        <span class="bg-red-400 text-gray-200">
+                            Belum ada produk pada kategori ini.
+                        </span>
+                    @else
+                        <table class="min-w-full bg-white dark:bg-gray-800">
+                            <thead>
+                                <th class="py-2 px-2 text-start uppercase font-semibold dark:text-gray-200">Nama Produk</th>
+                                <th class="py-2 px-2 text-start uppercase font-semibold dark:text-gray-200">Harga</th>
+                            </thead>
+                            <tbody>
+                                @foreach ($data->produk as $item)
+                                    <tr>
+                                        <td class="py-2 px-2 font-md dark:text-gray-200">{{$item->nama_produk}}</td>
+                                        <td class="py-2 px-2 font-md dark:text-gray-200">IDR. {{number_format($item->harga)}}
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    @endif
+                </div>
 
             </div>
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
