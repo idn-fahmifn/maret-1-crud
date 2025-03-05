@@ -63,4 +63,11 @@ class KategoriController extends Controller
         $data->update($input);
         return back()->with('success', 'Data berhasil diubah');
     }
+
+    public function delete($id)
+    {
+        $data = Kategori::findOrFail($id);
+        $data->delete();
+        return back()->with('success','Data berhasil dihapus');
+    }
 }

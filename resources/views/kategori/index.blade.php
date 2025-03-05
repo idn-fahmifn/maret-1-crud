@@ -24,6 +24,7 @@
                         <thead class="bg-red-500 text-white">
                             <th class="py-1 px-4 uppercase text-sm">Nama Kategori</th>
                             <th class="py-1 px-4 uppercase text-sm">Thumbnail</th>
+                            <th class="py-1 px-4 uppercase text-sm">Action</th>
                         </thead>
                         <tbody>
                             @foreach ($data as $item)
@@ -31,6 +32,14 @@
                                     <td class="py-1 px-4 dark:text-gray-200">{{$item->nama_kategori}}</td>
                                     <td class="py-1 px-4 dark:text-gray-200">
                                         <img src="{{asset('storage/images/kategori/' . $item->thumbnail)}}" width="100" alt="">
+                                    </td>
+                                    <td>
+                                        <form action="{{route('kategori.delete', $item->id)}}" method="post">
+                                            @csrf
+                                            @method('delete')
+                                            <a href="{{route('kategori.detail', $item->id)}}" class="text-md font-semibold text-red-500">Detail</a>
+                                            <button type="submit" class="text-md font-semibold text-red-500 ml-4" onclick="return confirm('yakin mau dihapus?')">Hapus</button>
+                                        </form>
                                     </td>
                                 </tr>
                             @endforeach

@@ -22,6 +22,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::post('kategori', [KategoriController::class,'store'])->name('kategori.store');
     Route::get('kategori/{param}', [KategoriController::class, 'detail'])->name('kategori.detail');
     Route::put('kategori/{param}', [KategoriController::class, 'update'])->name('kategori.update');
+    Route::delete('kategori/{param}', [KategoriController::class, 'delete'])->name('kategori.delete');
 
 
 });
