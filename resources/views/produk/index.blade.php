@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Dashboard') }}
+            {{ __('Produk') }}
         </h2>
     </x-slot>
 
@@ -9,8 +9,8 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
-                    <h3 class="text-md font-semibold text-gray-200">Kategori Produk</h3>
-                    <span class="text-sm">Semua data kategori, Klik pada nama kategori untuk melihat detail</span>
+                    <h3 class="text-md font-semibold text-gray-200">Produk</h3>
+                    <span class="text-sm">Semua data produk, Klik pada menu detail untuk melihat detail</span>
                 </div>
 
                 {{-- button create --}}
@@ -22,9 +22,9 @@
                 <div class="overflow-x-auto px-6 py-6">
                     <table class="min-w-full bg-white dark:bg-gray-800">
                         <thead class="bg-red-500 text-white">
-                            <th class="py-1 px-4 uppercase text-sm">Nama Kategori</th>
-                            <th class="py-1 px-4 uppercase text-sm">Thumbnail</th>
-                            <th class="py-1 px-4 uppercase text-sm">Action</th>
+                            <th class="py-1 px-4 uppercase text-sm">Nama Produk</th>
+                            <th class="py-1 px-4 uppercase text-sm">Harga</th>
+                            <th class="py-1 px-4 uppercase text-sm">Kategori</th>
                         </thead>
                         <tbody>
                             @foreach ($data as $item)
