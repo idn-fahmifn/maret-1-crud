@@ -19,7 +19,7 @@
                                 <td class="dark:text-white">{{$data->nama_kategori}}</td>
                                 <td>
                                     <img src="{{asset('storage/images/kategori/' . $data->thumbnail)}}" width="100"
-                                        alt="">
+                                        alt="Gambar Kategori">
                                 </td>
                             </tr>
                         </tbody>
@@ -34,11 +34,16 @@
                 <div class="overflow-x-auto mb-6 px-6">
                     <table class="min-w-full bg-white dark:bg-gray-800">
                         <thead>
-                            <th class="py-2 px-2 uppercase font-semibold">Nama Produk</th>
-                            <th class="py-2 px-2 uppercase font-semibold">Harga</th>
+                            <th class="py-2 px-2 text-start uppercase font-semibold dark:text-gray-200">Nama Produk</th>
+                            <th class="py-2 px-2 text-start uppercase font-semibold dark:text-gray-200">Harga</th>
                         </thead>
                         <tbody>
-                            {{$data->produk}}
+                            @foreach ($data->produk as $item)
+                                <tr>
+                                    <td class="py-2 px-2 font-md dark:text-gray-200">{{$item->nama_produk}}</td>
+                                    <td class="py-2 px-2 font-md dark:text-gray-200">IDR. {{number_format($item->harga)}} </td>
+                                </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
