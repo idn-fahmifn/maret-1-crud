@@ -29,7 +29,8 @@
                         <tbody>
                             @foreach ($data as $item)
                                 <tr>
-                                    <td class="py-1 px-4 dark:text-gray-200"> <a href="" class="font-semibold text-red-600">{{$item->nama_produk}}</a></td>
+                                    <td class="py-1 px-4 dark:text-gray-200"><a href="{{route('produk.detail', $item->id)}}" 
+                                        class="font-semibold text-red-600">{{$item->nama_produk}}</a></td>
                                     <td class="py-1 px-4 dark:text-gray-200">IDR.{{number_format($item->harga)}}</td>
                                     <td class="py-1 px-4 dark:text-gray-200">{{$item->kategori->nama_kategori}}</td>
                                 </tr>

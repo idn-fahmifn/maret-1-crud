@@ -38,6 +38,13 @@
                         </tbody>
                     </table>
                 </div>
+                <div class="mb-6 px-6">
+                    <form action="" method="post">
+                        @csrf
+                        @method('delete')
+                        <button type="submit" class="bg-red-500 py-2 px-4 text-white text-sm rounded-md">Hapus Produk</button>
+                    </form>
+                </div>
             </div>
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">

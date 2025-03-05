@@ -35,10 +35,10 @@
                         {{$data->nama_kategori}}</h3>
                 </div>
 
-                <div class="overflow-x-auto mb-6 px-6">
+                <div class="overflow-x-auto mb-12">
 
                     @if (!$produk)
-                        <span class="bg-red-400 text-gray-200">
+                        <span class="mx-6 text-gray-200">
                             Belum ada produk pada kategori ini.
                         </span>
                     @else
