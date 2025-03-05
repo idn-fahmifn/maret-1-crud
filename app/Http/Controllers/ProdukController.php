@@ -34,4 +34,11 @@ class ProdukController extends Controller
         Produk::create($data); //mengirimkan data ke database
         return redirect()->route('produk.index')->with('success', 'Produk berhasil ditambahkan.'); //respon redirect ke index kategori
     }
+
+    public function detail($id)
+    {
+        $data = Produk::findOrFail($id);
+        $kategori = Kategori::all();
+        return view('produk.detail', compact('data', 'kategori'));
+    }
 }
